@@ -8,7 +8,6 @@
 *Este proyecto es gracias al [Curso gratuito de React de Midudev]*
 [Curso gratuito de React de Midudev]: https://www.youtube.com/playlist?list=PLV8x_i1fqBw0B008sQn79YxCjkHJU84pC
 
-
 ### Instalar paquetes
 ```
   yarn install
