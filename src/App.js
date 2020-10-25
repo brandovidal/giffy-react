@@ -9,7 +9,7 @@ import { GifsContextProvider } from "./context/GifsContext"
 
 export default function App() {
   return (
-    <StaticContext.Provider value={{name: 'midudev', subscribeteAlCanal: true}}>
+    <StaticContext.Provider value={{name: 'giffy', subscribe: true}}>
       <div className="App">
         <section className="App-content">
           <GifsContextProvider>

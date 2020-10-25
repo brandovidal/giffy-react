@@ -1,23 +1,25 @@
 import React from 'react'
-import Spinner from '../../components/Spinner'
-import ListOfGifs from '../../components/ListOfGifs'
-import {useGifs} from '../../hooks/useGifs'
+import Spinner from 'components/Spinner'
+import ListOfGifs from 'components/ListOfGifs'
+import {useGifs} from 'hooks/useGifs'
 
 function SearchResults ({ params }) {
   const { keyword } = params
-  const {loading, gifs} = useGifs({keyword})
+  const {loading, gifs, setPage} = useGifs({keyword})
   console.log('-')
 
-  return <>
+  const handleNextPage = () => setPage(prevPage => prevPage + 1)
+
+  return (<>
     {loading
       ? <Spinner />
-      : (
-        <>
-          <h3 className="App-title">{keyword}</h3>
+      : (<>
+          <h3 className="App-title">{decodeURI(keyword)}</h3>
           <ListOfGifs gifs={gifs} />
-        </>
-      )
+        </>)
     }
-  </>
+    <br/>
+    <button onClick={handleNextPage}>get next page</button>
+  </>)
 }
 export default React.memo(SearchResults)

@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import { useLocation } from "wouter";
-import ListOfGifs from "../../components/ListOfGifs";
-import Spinner from "../../components/Spinner";
-import Category from "../../components/Category";
-import { useGifs } from "../../hooks/useGifs";
-
-const POPULAR_GIFS = ["Matrix", "Chile", "Colombia", "Ecuador"];
+import React, { useState } from "react"
+import { useLocation } from "wouter"
+import { useGifs } from "hooks/useGifs"
+import ListOfGifs from "components/ListOfGifs"
+import Spinner from "components/Spinner"
+import Trending from "components/Trending"
 
 export default function Home() {
   const [keyword, setKeyword] = useState('')
@@ -32,8 +30,7 @@ export default function Home() {
           {loading ? <Spinner /> : <ListOfGifs gifs={gifs} />}
         </div>
         <div className="App-category">
-          <Category name='Los gifs más populares' options={POPULAR_GIFS} />
-          <Category name="Mascotas" options={['Perros', 'Gatos', 'Hamster']} />
+          <Trending />
         </div>
       </div>
     </>
